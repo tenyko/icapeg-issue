@@ -49,3 +49,9 @@ Squid is waiting on ICAPeg, and ICAPeg is waiting on Squid.
 Higher network speed between the components makes the issue more frequent.
 This Dockerized environment, where everything is on the same host, almost always reproduces the issue.
 
+# Versions
+- Rocky Linux 8.9 (docker image rockylinux:8.9)
+- Squid 4.15 OpenSSL 1.1.1k  FIPS 25 Mar 2021.
+- nginx 1.14.1
+- curl 7.61.1
+- Egirna ICAPeg master v1.0.0 (8eb8bb09)
