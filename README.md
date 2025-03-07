@@ -2,6 +2,7 @@
 # Test
     git clone https://github.com/tenyko/icapeg-issue.git
     cd icapeg-issue
+    docker compose build --no-cache --progress=plain
     docker compose up --build
 
 # Expected Output
