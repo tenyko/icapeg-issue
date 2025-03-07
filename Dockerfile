@@ -11,4 +11,4 @@ RUN cp /opt/icapeg/files-for-testing/sample.pdf /usr/share/nginx/html/
 COPY config.toml squid.conf test.bash .
 COPY static.conf /etc/nginx/conf.d/
 
-CMD /bin/bash -e test.bash
+CMD /bin/bash -x -e test.bash
