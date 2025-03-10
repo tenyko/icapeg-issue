@@ -8,6 +8,7 @@
 Note: If using `podman` instead of `docker`, remove the `--progress=plain` parameter.
 
 To repeat the test, run:
+
     docker compose run icapeg-test
 
 # The issue demo walk-through
