@@ -1,3 +1,12 @@
+# Intro
+
+ICAP request handler hangs (gets stuck) as if waiting on remote end.
+
+The issue manifests under specific circumstances only:
+
+- the ICAPeg server does not crash, and no error is logged; a request simply gets stuck
+- non-deterministic - sometimes there is no issue; it occurs more often the faster the connection between the components is
+- only reproduced with Squid as the ICAP client
 
 # Test
     git clone https://github.com/tenyko/icapeg-issue.git
