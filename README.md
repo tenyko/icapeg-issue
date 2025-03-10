@@ -5,6 +5,19 @@
     docker compose build --no-cache --progress=plain
     docker compose up --build
 
+Note: If using `podman` instead of `docker`, remove the `--progress=plain` parameter.
+
+To repeat the test, run:
+    docker compose run icapeg-test
+
+# The issue demo walk-through
+
+- starts NGINX, Squid, and ICAPeg in a Docker container
+- curl downloads small file directly from NGINX - OK
+- curl downloads large file directly from NGINX - OK
+- curl downloads small file via Squid and ICAP /echo - OK
+- curl downloads large file via Squid and ICAP /echo - FAIL: connection hangs; i.e. gets stuck
+
 # Expected Output
     icapeg-test-1  | Testing download of small file (sample.pdf) directly from NGINX
     icapeg-test-1  | bfd009f500c057195ffde66fae64f92fa5f59b72  -
@@ -55,3 +68,13 @@ This Dockerized environment, where everything is on the same host, almost always
 - nginx 1.14.1
 - curl 7.61.1
 - Egirna ICAPeg master v1.0.0 (8eb8bb09)
+- Docker Engine Community 27.3.1
+
+# What's What
+- `config.toml` - ICAPeg config
+- `squid.conf` - Squid configured /w ICAP RESPMOD /echo service
+- `static.conf` - NGINX file server config - serves sample.pdf and ICAPeg-DS.pdf over HTTP
+- `test.bash` - issue demo bash script
+- `Dockerfile` - dockerized test environment
+- `compose.yaml` - docker compose helper
+- `README.md` - this file
