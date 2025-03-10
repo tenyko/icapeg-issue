@@ -6,6 +6,7 @@ The issue manifests under specific circumstances only:
 
 - the ICAPeg server does not crash, and no error is logged; a request simply gets stuck
 - non-deterministic - sometimes there is no issue; it occurs more often the faster the connection between the components is
+- no issue with files <=65535 bytes
 - only reproduced with Squid as the ICAP client
 
 # Test
